@@ -22,47 +22,55 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	console.log("Slow down video")
-	video.playbackRate *= 0.95
+	video.playbackRate *= 0.90
 	console.log("Playback rate is " + video.playbackRate)
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
 	console.log("Speed up video")
-	video.playbackRate /= 0.95
+	video.playbackRate /= 0.90
 	console.log("Playback rate is " + video.playbackRate)
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Skip ahead")
-	video.currentTime += 15
+	video.currentTime += 10
 	if (video.currentTime >= video.duration)
 		video.currentTime = 0
 	console.log("Current time is " + video.currentTime)
 });
 
-// document.querySelector("#mute").addEventListener("click", function() {
-// 	console.log("Mute video")
-// 	video.muted = false
-// 	if (video.muted >= 0)
-// 		video.currentVolume = 0
-// });
+document.querySelector("#mute").addEventListener("click", function() {
+	console.log("Mute video")
+	video.muted = false
+	if (video.muted == false) {
+		video.muted = true;
+	}
+	else {
+		video.muted == false
+	}
+});
 
-// document.querySelector("#faster").addEventListener("click", function() {
-// 	console.log("Speed up video")
-// 	video.playbackRate /= 0.95
-// 	console.log("Playback rate is " + video.playbackRate)
-// });
+document.querySelector("#slider").addEventListener("click", function() {
+	console.log("Volume")
+	video.volume += 1
+	console.log("Current volume is " + video.volume)
+});
 
-// document.querySelector("#faster").addEventListener("click", function() {
-// 	console.log("Speed up video")
-// 	video.playbackRate /= 0.95
-// 	console.log("Playback rate is " + video.playbackRate)
-// });
+document.querySelector("#vintage").addEventListener("click", function() {
+	console.log("Old School")
+	if (video.classList.contains("Old-School")) {
+		video.classList.remove("Old-School");
+	  } else {
+		video.classList.add("Old-School");
+	  }
+});
 
-// document.querySelector("#faster").addEventListener("click", function() {
-// 	console.log("Speed up video")
-// 	video.playbackRate /= 0.95
-// 	console.log("Playback rate is " + video.playbackRate)
-// });
-
-// mute is another if statement
+document.querySelector("#orig").addEventListener("click", function() {
+	console.log("Original")
+	if (video.classList.contains("Original")) {
+		video.classList.remove("Original");
+	  } else {
+		video.classList.add("Original");
+	  }
+});
