@@ -58,7 +58,7 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("change", function() {
 	console.log("I am in slider")
 	console.log(this)
-	console(this.value)
+	console.log(this.value)
 	bd = document.querySelector("body")
 	bd.style.fontSize = this.value + "%"
 });
