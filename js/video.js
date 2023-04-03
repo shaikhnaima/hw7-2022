@@ -42,35 +42,33 @@ document.querySelector("#skip").addEventListener("click", function() {
 
 document.querySelector("#mute").addEventListener("click", function() {
 	console.log("Mute video")
-	video.muted = false
+	// video.muted = false
 	if (video.muted == false) {
 		video.muted = true;
+		console.log("Video muted")
+		document.getElementById("mute").textContent = "Unmute";
 	}
 	else {
-		video.muted == false
+		video.muted = false;
+		console.log("Video unmuted")
+		document.getElementById("mute").textContent = "Mute";
 	}
 });
 
-document.querySelector("#slider").addEventListener("click", function() {
-	console.log("Volume")
-	video.volume += 1
-	console.log("Current volume is " + video.volume)
+document.querySelector("#slider").addEventListener("change", function() {
+	console.log("I am in slider")
+	console.log(this)
+	console(this.value)
+	bd = document.querySelector("body")
+	bd.style.fontSize = this.value + "px"
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
 	console.log("Old School")
-	if (video.classList.contains("Old-School")) {
-		video.classList.remove("Old-School");
-	  } else {
-		video.classList.add("Old-School");
-	  }
+	video.classList.add("oldSchool");
 });
 
 document.querySelector("#orig").addEventListener("click", function() {
 	console.log("Original")
-	if (video.classList.contains("Original")) {
-		video.classList.remove("Original");
-	  } else {
-		video.classList.add("Original");
-	  }
+	video.classList.remove("oldSchool");
 });
