@@ -60,7 +60,7 @@ document.querySelector("#slider").addEventListener("change", function() {
 	console.log(this)
 	console(this.value)
 	bd = document.querySelector("body")
-	bd.style.fontSize = this.value + "px"
+	bd.style.fontSize = this.value + "%"
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
