@@ -59,8 +59,8 @@ document.querySelector("#slider").addEventListener("change", function() {
 	console.log("I am in slider")
 	console.log(this)
 	console.log(this.value)
-	bd = document.querySelector("body")
-	bd.style.fontSize = this.value + "%"
+	video.volume = this.value / 100
+	document.querySelector("#volume").innerHTML = this.value + "%"
 });
 
 document.querySelector("#vintage").addEventListener("click", function() {
